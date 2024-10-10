@@ -1,6 +1,11 @@
 # funkce vrati treti prvek ze seznamu
 def vrat_treti(seznam):
-    return None
+    if len(seznam) <= 2:
+        return None
+    else:
+        return seznam[2]
+
+
 
 # funkce spocita prumer z hodnot v seznamu
 def udelej_prumer(seznam):
@@ -13,7 +18,11 @@ def naformatuj_text(slovnik):
 
 
 if __name__ == "__main__":
-    print(vrat_treti([9,8,7,6,5]))
+    seznam = [9,8]
+    vysledek = vrat_treti(seznam)
+    print(vysledek)
+
+
     print(udelej_prumer([9,8,7,6,5]))
     student = {
         "jmeno": "Matěj",
@@ -22,3 +31,4 @@ if __name__ == "__main__":
         "znamky": [1, 2, 1, 1, 3, 2]
     }
     print(naformatuj_text(student))
+
