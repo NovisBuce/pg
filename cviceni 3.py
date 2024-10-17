@@ -43,9 +43,9 @@ def my_zip(*iterables, start=1):
     lenght = len(iterables[0])
     for i in range(0,lenght):
         subresult = []
-        for iterable in iterables:
-            subresult.append(iterable[i])
-        results.append(subresult)
+        for j in range(0, len(iterables)):
+            subresult.append(iterables[j][i])
+        results.append(tuple(subresult))
 
     return results
 
