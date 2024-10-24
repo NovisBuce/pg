@@ -1,6 +1,18 @@
 def levensteinova_vzdalenost(dotaz1, dotaz2):
-    pass
+    lenght = max(len(dotaz1), len(dotaz2))
+    i = 0
+    levenstein = 0
+    while i < lenght:
+        if i < len(dotaz1) and i < len(dotaz2):
+            if dotaz1[i] != dotaz2[i]:
+                levenstein += 1
+        else:
+            levenstein += 1
+        i += 1
+    return levenstein
+        
 
+    
 
 if __name__ == "__main__":
 
