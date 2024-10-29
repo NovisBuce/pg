@@ -8,6 +8,7 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
     
     :return: True, pokud je tah možný, jinak False.
     """
+    sandjasnda
     # Implementace pravidel pohybu pro různé figury zde.
     return False
 
