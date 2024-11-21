@@ -9,6 +9,8 @@ class ImutableInteger:
     
     @number.setter
     def number(self, new_number):
+        if self.imutable:
+            raise Exception
         self.__number = new_number
     
 if __name__ == "__main__":
