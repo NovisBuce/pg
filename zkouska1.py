@@ -17,8 +17,13 @@ def pozpatku_1(text):
 
 
 if __name__ == "__main__":
-    soubor = sys.argv[1]
-    with open(soubor, "r") as fp:
-        obsah = fp.read()
-        obracene = pozpatku(obsah)
-        print(obracene)
+    try:
+        soubor = sys.argv[1]
+        with open(soubor, "r") as fp:
+            obsah = fp.read()
+            obracene = pozpatku(obsah)
+            print(obracene)
+    except IndexError:
+        print("Zadej název souboru")
+    except FileNotFoundError:
+        print("Soubor neexistuje")

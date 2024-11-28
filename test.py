@@ -1,5 +1,6 @@
 from aplikace import soucet, fibonachi
 from zkouska1 import pozpatku, pozpatku_1
+from zkouska2 import operace
 
 def test_soucet_2():
     assert soucet(1, 1) == 2
@@ -20,3 +21,9 @@ def test_pozpatku():
 def test_pozpatku_2():
     assert pozpatku_1("ahoj") == "joha"
     assert pozpatku_1("ahoj, jak se mas?") == "?sam es kaj ,joha"
+
+def test_operace():
+    assert operace("+", 1, 2) == 3
+    assert operace("-", 2, 1) == 1
+    assert operace("*", 0, 5) == 0
+    assert operace("/", 4, 2) == 2
