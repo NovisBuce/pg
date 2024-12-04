@@ -25,7 +25,7 @@ def test_funkce():
     assert bin_to_dec(101) == 5
     assert bin_to_dec("010101") == 21
     assert bin_to_dec(10000000) == 128
-    print("Všechny testy prošly.")
+    
 
 if __name__ == "__main__":
     test_funkce()
