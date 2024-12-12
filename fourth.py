@@ -9,7 +9,46 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
     :return: True, pokud je tah možný, jinak False.
     """
     # Implementace pravidel pohybu pro různé figury zde.
+    if cilova_pozice in obsazene_pozice:
+        return False
+    aktualni_pozice = figurka["pozice"]
+    if  figurka["typ"] == "pěšec":
+        if aktualni_pozice[1] != cilova_pozice[1]:
+            return False
+        if  aktualni_pozice[0] + 1 == cilova_pozice[0]:
+            return True
+        if aktualni_pozice[0] == 2 and aktualni_pozice[0] + 2 == cilova_pozice[0]:
+            
+            if (aktualni_pozice[0] + 1, aktualni_pozice[1]) in obsazene_pozice:
+                return False
+            else: 
+                return True
+
+    elif figurka["typ"] == "jezdec" or figurka["typ"] == "dáma":
+        for i in[1, 2]:
+            if abs(aktualni_pozice[0] - cilova_pozice[0]) == 1 and abs(aktualni_pozice[1] - cilova_pozice[1]) == 2:
+                return True
+            if abs(aktualni_pozice[0] - cilova_pozice[0]) == 2 and abs(aktualni_pozice[1] - cilova_pozice[1]) == 1:
+                return True
+
+    elif figurka["typ"] == "věž" or figurka["typ"] == "dáma":
+        if aktualni_pozice[0] != cilova_pozice[0] and aktualni_pozice[1] != cilova_pozice[1]:
+            return False
+        for i in range(aktualni_pozice[0], cilova_pozice[0]):
+            if (i, aktualni_pozice[1]) in obsazene_pozice:
+                return False
+        for i in range(aktualni_pozice[1], cilova_pozice[1]):
+            if (aktualni_pozice[0], i) in obsazene_pozice:
+                return False
+        return True    
     
+    elif figurka["typ"] == "střelec":
+        if abs(aktualni_pozice[0])
+
+    elif figurka["typ"] == "král:":
+
+
+
     return False
 
 
