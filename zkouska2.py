@@ -14,8 +14,11 @@ api_key = 'a023a3be26e530f37924110734b494b1'
 
 
 def fetch_weather_data(city):
-    # ZDE NAPIŠTE VÁŠ KÓD
-    pass
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
+    try: 
+        response = requests.get(url)
+
+    
 
 
 # Unit testy
@@ -29,7 +32,7 @@ def test_fetch_weather_data():
     }
     with patch("requests.get") as mock_get:
         mock_get.return_value = MagicMock(ok=True, status_code=200, json=MagicMock(return_value=mock_response))
-        assert fetch_weather_data("Prague", "test_api_key") == 20.0  # 293.15 K = 20.0 °C
+        assert fetch_weather_data("Prague") == 20.0  # 293.15 K = 20.0 °C
 
 
 if __name__ == "__main__":
