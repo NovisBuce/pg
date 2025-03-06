@@ -1,5 +1,9 @@
+class ZapornyZustatek(Exception):
+    pass
+
 class BankovnuUcet():
-    self.zustatek = 0
+    def __init__(self):
+        self.zustatek = 0
 
 
     @property
@@ -9,10 +13,16 @@ class BankovnuUcet():
 
     @zustatek.setter
     def zustatek(self, hodnota):
+        if hodnota < 0:
+            raise ZapornyZustatek(f"Nelze zapsat zustatel {hodnota}")
         self.__zustatek = hodnota
 
 if __name__ == "__main__":
-    muj_ucet = BankovnuUcet()
-    print(muj_ucet.zustatek)
-    muj_ucet.zustatek = -100
-    print(muj_ucet.zustatek)
+    try:
+        muj_ucet = BankovnuUcet()
+        print(muj_ucet.zustatek)
+        muj_ucet.zustatek = -100
+        print(muj_ucet.zustatek)
+    except ZapornyZustatek as e:
+        print(str(e))
+    
